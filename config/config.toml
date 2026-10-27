@@ -23,6 +23,15 @@ sync = "manual"
 showhidden = true # Make Dock icons of hidden applications translucent
 
 [bootstrap.macos.defaults."com.apple.finder"]
-show_extensions_warning = false
-show_pathbar = true
-show_status_bar = true
+
+FXEnableExtensionChangeWarning = false # disable the warning when changing a file extension
+
+ShowPathbar = true
+
+ShowStatusBar = true
+
+_FXShowPosixPathInTitle = true #display full POSIX path as window title
+
+FXPreferredViewStyle = "clmv" # use column view in all Finder windows
+
+QLEnableTextSelection = true # allow text selection in Quick Look
