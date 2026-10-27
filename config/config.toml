@@ -19,7 +19,6 @@ sync = "manual"
 "~/.zshrc" = { mode = "track" }
 
 [bootstrap.macos.defaults]
-com.apple.dock = { showhidden = false }
 
 [bootstrap.macos.defaults."com.apple.dock"]
 showhidden = true  # Make Dock icons of hidden applications translucent
