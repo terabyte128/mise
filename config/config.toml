@@ -1,13 +1,6 @@
 [bootstrap.services.mise-history]
 builtin = "history-watch"
 
-[history.origin]
-url = "git@github.com:terabyte128/mise.git"
-branch = "main"
-
-[settings.history]
-sync = "manual"
-
 [dotfiles]
 "~/.config/mise" = { mode = "track" }
 "~/.config/nvim" = { mode = "track" }
