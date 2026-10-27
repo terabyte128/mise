@@ -17,3 +17,14 @@ sync = "manual"
 "~/.tmux.conf" = { mode = "track" }
 "~/.zsh" = { mode = "track" }
 "~/.zshrc" = { mode = "track" }
+
+[bootstrap.macos.dock]
+autohide = true
+autohide_delay = 0
+
+[bootstrap.macos.defaults]
+"com.apple.dock" = {
+
+
+}
+showhidden = true # Make Dock icons of hidden applications translucent
