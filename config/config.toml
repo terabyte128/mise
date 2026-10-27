@@ -18,14 +18,11 @@ sync = "manual"
 "~/.zsh" = { mode = "track" }
 "~/.zshrc" = { mode = "track" }
 
-[bootstrap.macos.dock]
-autohide = true
-autohide_delay = 0
-
-[bootstrap.macos.finder]
-show_extensions_warning = false
-show_pathbar = true
-show_status_bar = true
 
 [bootstrap.macos.defaults."com.apple.dock"]
 showhidden = true # Make Dock icons of hidden applications translucent
+
+[bootstrap.macos.defaults."com.apple.finder"]
+show_extensions_warning = false
+show_pathbar = true
+show_status_bar = true
