@@ -18,6 +18,7 @@ sync = "manual"
 "~/.zsh" = { mode = "track" }
 "~/.zshrc" = { mode = "track" }
 
+[bootstrap.macos.defaults]
 
 [bootstrap.macos.defaults."com.apple.dock"]
 showhidden = true  # Make Dock icons of hidden applications translucent
@@ -43,3 +44,8 @@ NSDocumentSaveNewDocumentsToCloud = false # iCloud - Save to disk by default.
 AppleShowAllExtensions = true             # Finder - Show filename extensions.
 WebKitDeveloperExtras = true              # Safari - Add a context menu item for showing the Web Inspector in web views.
 PMPrintingExpandedStateForPrint = true    # Printer - Expand print panel by default.
+
+[bootstrap.macos.defaults."com.apple.TextEdit"]
+RichText = 0
+PlainTextEncoding = 4
+PlainTextEncodingForWrite = 4
