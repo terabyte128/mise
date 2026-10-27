@@ -27,5 +27,5 @@ show_extensions_warning = false
 show_pathbar = true
 show_status_bar = true
 
-[bootstrap.macos.defaults]
+[bootstrap.macos.defaults."com.apple.dock"]
 "com.apple.dock" = { showhidden = true } # Make Dock icons of hidden applications translucent
