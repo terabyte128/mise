@@ -20,7 +20,9 @@ sync = "manual"
 
 
 [bootstrap.macos.defaults."com.apple.dock"]
-showhidden = true # Make Dock icons of hidden applications translucent
+showhidden = true  # Make Dock icons of hidden applications translucent
+autohide = true    # automatically hide and show
+autohide-delay = 0 # remove the auto-hiding delay
 
 [bootstrap.macos.defaults."com.apple.finder"]
 FXEnableExtensionChangeWarning = false # disable the warning when changing a file extension
