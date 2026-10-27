@@ -15,5 +15,5 @@ sync = "manual"
 "~/.gdbinit" = { mode = "track" }
 "~/.gitconfig" = { mode = "track" }
 "~/.tmux.conf" = { mode = "track" }
-"~/.zsh" = {}
+"~/.zsh" = { mode = "track" }
 "~/.zshrc" = { mode = "track" }

@@ -1,0 +1,1 @@
+/home/samwolfson/.dotfiles/.zsh
