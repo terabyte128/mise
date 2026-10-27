@@ -1,0 +1,77 @@
+{
+  "format": 1,
+  "enrollment": [
+    {
+      "path": "config",
+      "autosave": true,
+      "encrypt": false,
+      "variants": []
+    },
+    {
+      "path": "home/.config/nvim",
+      "autosave": true,
+      "encrypt": false,
+      "variants": []
+    },
+    {
+      "path": "home/.config/wezterm",
+      "autosave": true,
+      "encrypt": false,
+      "variants": []
+    },
+    {
+      "path": "home/.gdbinit",
+      "autosave": true,
+      "encrypt": false,
+      "variants": []
+    },
+    {
+      "path": "home/.gitconfig",
+      "autosave": true,
+      "encrypt": false,
+      "variants": []
+    },
+    {
+      "path": "home/.tmux.conf",
+      "autosave": true,
+      "encrypt": false,
+      "variants": []
+    },
+    {
+      "path": "home/.zshrc",
+      "autosave": true,
+      "encrypt": false,
+      "variants": []
+    }
+  ],
+  "exclude": [],
+  "recipients": [],
+  "permissions": {
+    "config/config.toml": 436,
+    "home/.config": 448,
+    "home/.config/nvim": 509,
+    "home/.config/nvim/.stylua.toml": 436,
+    "home/.config/nvim/init.lua": 436,
+    "home/.config/nvim/lazy-lock.json": 436,
+    "home/.config/nvim/lazyvim.json": 436,
+    "home/.config/nvim/lua": 509,
+    "home/.config/nvim/lua/appearance.lua": 436,
+    "home/.config/nvim/lua/config": 509,
+    "home/.config/nvim/lua/config/lazy.lua": 436,
+    "home/.config/nvim/lua/hover.lua": 436,
+    "home/.config/nvim/lua/luadefinitions.json": 436,
+    "home/.config/nvim/lua/plugins": 509,
+    "home/.config/nvim/lua/plugins/ai.lua": 436,
+    "home/.config/nvim/lua/plugins/completion.lua": 436,
+    "home/.config/nvim/lua/plugins/init.lua": 436,
+    "home/.config/nvim/lua/plugins/lspconfig.lua": 436,
+    "home/.config/nvim/lua/plugins/telescope.lua": 436,
+    "home/.config/wezterm": 509,
+    "home/.config/wezterm/wezterm.lua": 436,
+    "home/.config/wezterm/work.lua": 436,
+    "home/.gdbinit": 384,
+    "home/.gitconfig": 436,
+    "home/.tmux.conf": 436,
+    "home/.zshrc": 436
+  }
+}

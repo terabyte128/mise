@@ -1,0 +1,11 @@
+[bootstrap.services.mise-history]
+builtin = "history-watch"
+
+[dotfiles]
+"~/.config/mise" = { mode = "track" }
+"~/.config/nvim" = { mode = "track" }
+"~/.config/wezterm" = { mode = "track" }
+"~/.gdbinit" = { mode = "track" }
+"~/.gitconfig" = { mode = "track" }
+"~/.tmux.conf" = { mode = "track" }
+"~/.zshrc" = { mode = "track" }
