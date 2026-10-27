@@ -23,8 +23,4 @@ autohide = true
 autohide_delay = 0
 
 [bootstrap.macos.defaults]
-"com.apple.dock" = {
-
-
-}
-showhidden = true # Make Dock icons of hidden applications translucent
+"com.apple.dock" = { showhidden = true }
