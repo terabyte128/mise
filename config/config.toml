@@ -1,6 +1,9 @@
 [bootstrap.services.mise-history]
 builtin = "history-watch"
 
+[bootstrap.packages]
+"apt:build-essential" = "latest"
+
 [dotfiles]
 "~/.config/mise" = { mode = "track" }
 "~/.config/nvim" = { mode = "track" }
