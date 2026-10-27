@@ -2,7 +2,7 @@
 builtin = "history-watch"
 
 [history.origin]
-url = "https://github.com/terabyte128/mise.git"
+url = "git@github.com:terabyte128/mise.git"
 branch = "main"
 
 [settings.history]
