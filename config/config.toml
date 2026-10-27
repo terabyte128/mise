@@ -11,6 +11,9 @@ builtin = "history-watch"
 "~/.zsh" = { mode = "track" }
 "~/.zshrc" = { mode = "track" }
 
+[tools]
+neovim = "latest"
+
 [bootstrap.macos.defaults]
 "com.apple.driver.AppleBluetoothMultitouch.trackpad" = { TrackpadRightClick = true }
 "com.apple.desktopservices" = { DSDontWriteNetworkStores = true }
