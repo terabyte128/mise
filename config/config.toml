@@ -4,6 +4,7 @@ builtin = "history-watch"
 [bootstrap.packages]
 "apt:build-essential" = "latest"
 "apt:luarocks" = "latest"
+"apt:zsh" = "latest"
 
 [dotfiles]
 "~/.config/mise" = { mode = "track" }
