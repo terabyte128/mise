@@ -54,6 +54,9 @@
   "recipients": [],
   "permissions": {
     "config/config.toml": 436,
+    "config/locks/opencode/2.1.4~009061c2/aube-lock.yaml": 384,
+    "config/locks/opencode/2.1.4~009061c2/package.json": 384,
+    "config/mise.lock": 384,
     "home/.config": 448,
     "home/.config/nvim": 509,
     "home/.config/nvim/.stylua.toml": 436,
