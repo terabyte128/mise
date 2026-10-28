@@ -19,6 +19,7 @@ builtin = "history-watch"
 
 [tools]
 neovim = "latest"
+node = "latest"
 ripgrep = "latest"
 
 [bootstrap.macos.defaults]
