@@ -21,7 +21,10 @@ builtin = "history-watch"
 neovim = "latest"
 node = "latest"
 opencode = { version = "latest", allow_builds = ["@opencode/cli"] }
+python = "3.12"
 ripgrep = "latest"
+ruff = "latest"
+uv = "latest"
 
 [bootstrap.macos.defaults]
 "com.apple.driver.AppleBluetoothMultitouch.trackpad" = { TrackpadRightClick = true }
