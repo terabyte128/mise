@@ -11,11 +11,11 @@ fingerprint = "9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88"
 "apt:build-essential" = "latest"
 "apt:luarocks" = "latest"
 "apt:zsh" = "latest"
-"docker-ce" = "latest"
-"docker-ce-cli" = "latest"
-"containerd.io" = "latest"
-"docker-buildx-plugin" = "latest"
-"docker-compose-plugin" = "latest"
+"apt:docker-ce" = "latest"
+"apt:docker-ce-cli" = "latest"
+"apt:containerd.io" = "latest"
+"apt:docker-buildx-plugin" = "latest"
+"apt:docker-compose-plugin" = "latest"
 
 [dotfiles]
 "~/.config/mise" = { mode = "track" }
