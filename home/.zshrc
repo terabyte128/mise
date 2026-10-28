@@ -309,6 +309,7 @@ autoload -U +X bashcompinit && bashcompinit
 command_exists eksctl && source <(eksctl completion zsh)
 command_exists aws && command_exists aws_completer && complete -C "$(which aws_completer)" aws
 command_exists terraform && complete -o nospace -C $(which terraform) terraform
+command_exists mise && source <(mise completion zsh)
 
 # use bash-style word deletion (split on /)
 autoload -U select-word-style
