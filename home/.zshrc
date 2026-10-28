@@ -336,14 +336,6 @@ bindkey '^N' down-line-or-history
 command_exists pio && eval "$(_PIO_COMPLETE=zsh_source pio)"
 # End: PlatformIO Core completion support
 
-# fuzzy find
-if [[ -d "$HOME/.config/fzf-zsh-plugin/bin" ]]; then
-    export PATH="$PATH:$HOME/.config/fzf-zsh-plugin/bin"
-    source "$HOME/.config/fzf-zsh-plugin/fzf-zsh-plugin.plugin.zsh"
-else
-    bindkey '^R' history-incremental-search-backward
-fi
-
 [[ -S ~/.1password/agent.sock ]] && export SSH_AUTH_SOCK="$HOME/.1password/agent.sock"
 
 export FIRST_NAME=Sam
