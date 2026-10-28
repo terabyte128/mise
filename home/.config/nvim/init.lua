@@ -237,7 +237,7 @@ vim.o.foldenable = true
 vim.opt.foldmethod = 'expr'
 vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 
-vim.lsp.set_log_level(vim.lsp.log_levels.WARN)
+vim.lsp.log.set_level(vim.lsp.log_levels.WARN)
 
 -- Function to replace checkboxes in a given range
 local function replace_checkboxes_in_range()
