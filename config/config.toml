@@ -18,6 +18,7 @@ builtin = "history-watch"
 
 [tools]
 neovim = "latest"
+ripgrep = "latest"
 
 [bootstrap.macos.defaults]
 "com.apple.driver.AppleBluetoothMultitouch.trackpad" = { TrackpadRightClick = true }
