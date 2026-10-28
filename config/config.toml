@@ -30,6 +30,7 @@ fingerprint = "9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88"
 
 [tools]
 aws = { version = "latest", symlink_bins = "true" }
+delta = "latest"
 direnv = "latest"
 fzf = "latest"
 neovim = "latest"
