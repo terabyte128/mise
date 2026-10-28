@@ -42,6 +42,7 @@ opencode = { version = "latest", allow_builds = ["@opencode/cli"] }
 python = "3.12"
 ripgrep = "latest"
 ruff = "latest"
+shfmt = "latest"
 terraform = "latest"
 tree-sitter = "latest"
 uv = "latest"
