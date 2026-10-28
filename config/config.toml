@@ -1,6 +1,6 @@
 [settings]
-# lockfile = true
-# locked = true
+lockfile = true
+locked = true
 
 [bootstrap.services.mise-history]
 builtin = "history-watch"
