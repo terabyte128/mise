@@ -20,6 +20,7 @@ builtin = "history-watch"
 [tools]
 neovim = "latest"
 node = "latest"
+opencode = { version = "latest", allow_builds = ["@opencode/cli"] }
 ripgrep = "latest"
 
 [bootstrap.macos.defaults]
