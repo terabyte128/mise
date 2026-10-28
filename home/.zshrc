@@ -457,3 +457,5 @@ case ":$PATH:" in
 esac
 # pnpm end
 eval "$(/home/samwolfson/.local/bin/mise activate zsh)"
+
+export COLORTERM=truecolor # tell opencode it can use true color
