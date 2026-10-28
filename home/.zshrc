@@ -421,7 +421,6 @@ function vactivate() {
 #     export TERM="xterm-256color"
 # fi
 
-command_exists fzf && source <(fzf --zsh)
 
 listening() {
     if [ $# -eq 0 ]; then
@@ -457,5 +456,7 @@ case ":$PATH:" in
 esac
 # pnpm end
 eval "$(/home/samwolfson/.local/bin/mise activate zsh)"
+
+command_exists fzf && source <(fzf --zsh)
 
 export COLORTERM=truecolor # tell opencode it can use true color
