@@ -19,6 +19,7 @@ builtin = "history-watch"
 
 [tools]
 aws = { version = "latest", symlink_bins = "true" }
+direnv = "latest"
 fzf = "latest"
 neovim = "latest"
 node = "latest"
