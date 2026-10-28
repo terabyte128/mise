@@ -1,10 +1,22 @@
 [bootstrap.services.mise-history]
 builtin = "history-watch"
 
+[bootstrap.apt.sources.docker]
+uris = "https://download.docker.com/linux/ubuntu"
+components = "stable"
+key = "https://download.docker.com/linux/ubuntu/gpg"
+fingerprint = "9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88"
+
 [bootstrap.packages]
 "apt:build-essential" = "latest"
 "apt:luarocks" = "latest"
 "apt:zsh" = "latest"
+"docker-ce" = "latest"
+"docker-ce-cli" = "latest"
+"containerd.io" = "latest"
+"docker-buildx-plugin" = "latest"
+"docker-compose-plugin" = "latest"
+
 
 [dotfiles]
 "~/.config/mise" = { mode = "track" }
