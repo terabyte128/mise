@@ -18,6 +18,7 @@ builtin = "history-watch"
 "~/.zshrc" = { mode = "track" }
 
 [tools]
+fzf = "latest"
 neovim = "latest"
 node = "latest"
 opencode = { version = "latest", allow_builds = ["@opencode/cli"] }
