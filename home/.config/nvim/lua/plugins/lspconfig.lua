@@ -257,6 +257,14 @@ return {
         vim.lsp.config(server_name, config)
         vim.lsp.enable(server_name)
       end
+
+      if vim.fn.executable('mise') == 1 then
+        vim.lsp.config('mise', {
+          cmd = {'mise', 'lsp'}
+          filetypes = {'toml'}
+
+        })
+      end
     end,
   },
 }
