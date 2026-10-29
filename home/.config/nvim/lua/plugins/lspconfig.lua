@@ -270,7 +270,7 @@ return {
 
         vim.lsp.config('mise', {
           cmd = { 'mise', 'lsp' },
-          filetypes = { 'toml' },
+          filetypes = { 'mise' },
         })
         vim.lsp.enable 'mise'
       end
