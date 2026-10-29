@@ -263,6 +263,7 @@ return {
           cmd = { 'mise', 'lsp' },
           filetypes = { 'toml' },
         })
+        vim.lsp.enable 'mise'
       end
     end,
   },
