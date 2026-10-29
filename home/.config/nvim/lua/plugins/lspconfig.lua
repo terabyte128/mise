@@ -259,18 +259,9 @@ return {
       end
 
       if vim.fn.executable 'mise' == 1 then
-        vim.filetype.add {
-          filename = {
-            ['mise.toml'] = 'mise',
-          },
-          pattern = {
-            ['.*/%.mise/config%.toml'] = 'mise',
-          },
-        }
-
         vim.lsp.config('mise', {
           cmd = { 'mise', 'lsp' },
-          filetypes = { 'mise' },
+          filetypes = { 'toml' },
         })
         vim.lsp.enable 'mise'
       end
