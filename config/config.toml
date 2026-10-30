@@ -48,3 +48,6 @@ shfmt = "latest"
 terraform = "latest"
 tree-sitter = "latest"
 uv = "latest"
+
+[shell_alias]
+tf = "terraform"
