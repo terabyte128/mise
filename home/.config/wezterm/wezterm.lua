@@ -53,16 +53,7 @@ local config = {
 }
 
 -- Use the defaults as a base
-local hyperlink_rules = wezterm.default_hyperlink_rules()
-
--- Remove email links
-for k, v in pairs(hyperlink_rules) do
-	if v.format:match("^mailto.*") ~= nil then
-		hyperlink_rules[k] = nil
-	end
-end
-
-config.hyperlink_rules = hyperlink_rules
+config.hyperlink_rules = wezterm.default_hyperlink_rules()
 
 pcall(function()
 	local work = require("work")

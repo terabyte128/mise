@@ -1,7 +1,0 @@
-#compdef _klfa klfa
-
-_klfa() {
-    for i in $(kubectl get deployments --no-headers | awk '{ print $1}'); do
-        compadd $i
-    done
-}
