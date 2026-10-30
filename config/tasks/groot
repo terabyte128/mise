@@ -8,4 +8,4 @@ if [[ "$?" != "0" ]]; then
     return 1
 fi
 
-cd "$root"
+cd "$root" || exit
