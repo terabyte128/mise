@@ -1,0 +1,9 @@
+#! /usr/bin/env bash
+
+#MISE description="Go to the git root of the current repository"
+
+if ! root="$(git rev-parse --show-toplevel)"; then
+    exit 1
+fi
+
+cd "$root" || exit

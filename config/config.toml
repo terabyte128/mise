@@ -1,5 +1,6 @@
 [settings]
 lockfile = true
+history = { sync = "manual" }
 
 [bootstrap.services.mise-history]
 builtin = "history-watch"
@@ -35,6 +36,7 @@ aws = { version = "latest", symlink_bins = "true" }
 delta = "latest"
 direnv = "latest"
 fzf = "latest"
+lua = "5.1"
 neovim = "latest"
 node = "latest"
 opencode = { version = "latest", allow_builds = ["@opencode/cli"] }
