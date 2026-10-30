@@ -232,45 +232,6 @@ function squash() {
     git rebase -i --autosquash $branch
 }
 
-function qh() {
-    if [ -z $argv[2] ]; then
-        dir=$PWD
-    else
-        dir=$argv[2]
-    fi
-
-    grep -rn -I \
-        --exclude-dir "\.terraform*" \
-        --exclude-dir "install" \
-        --exclude-dir "build" \
-        --exclude-dir ".mypy_cache" \
-        --exclude-dir ".venv" \
-        --exclude-dir ".git"  \
-        --exclude-dir ".cache" \
-        --exclude-dir "*.egg-info" \
-        --exclude-dir "node_modules" \
-        --exclude-dir "swagger-ui" \
-        --exclude-dir ".next" \
-        --exclude "*.map" \
-        --exclude "noise-field.js" \
-        --exclude "*bundle.js" \
-        --exclude "tf_state.json" \
-        --exclude "*.tfstate" \
-        --exclude-dir ".next" \
-        --exclude-dir "vendor" \
-        --exclude-dir "bin" \
-        --exclude-dir ".ipynb_checkpoints" \
-        $argv[1] $dir
-}
-
-function q() {
-    qh $argv[1] $OZDIR
-}
-
-function goto() {
-    cd $OZDIR/$1
-}
-
 function kc() {
     if [[ ! -z $1 ]]; then
         kubectl config set-context --current --namespace=$1
