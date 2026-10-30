@@ -3,7 +3,7 @@
 #MISE description="Go to the git root of the current repository"
 
 if ! root="$(git rev-parse --show-toplevel)"; then
-    return 1
+    exit 1
 fi
 
 cd "$root" || exit
