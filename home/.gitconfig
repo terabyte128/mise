@@ -16,7 +16,7 @@
 
 [core]
 	excludesfile = ~/.gitignore
-	hooksPath = /home/samwolfson/.git/hooks
+	hooksPath = ~/.git/hooks
 
 [include]
-	path = .config/gitconfig-local
+	path = ~/.config/gitconfig-local
