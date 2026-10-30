@@ -64,17 +64,17 @@ url = "https://github.com/junegunn/fzf/releases/download/v0.74.5/fzf-0.74.5-darw
 url_api = "https://api.github.com/repos/junegunn/fzf/releases/assets/629581702"
 
 [[tools.lua]]
-version = "5.5.1"
+version = "5.1"
 backend = "vfox:jdx/vfox-lua"
-specifiers = ["latest"]
+specifiers = ["5.1"]
 
 [tools.lua."platforms.linux-x64"]
-checksum = "sha256:1c4b4068d67061f2a2231ad2b5422e77acea1487ea9890f6320af614f4373dce"
-url = "https://www.lua.org/ftp/lua-5.5.1.tar.gz"
+checksum = "sha256:7f5bb9061eb3b9ba1e406a5aa68001a66cb82bac95748839dc02dd10048472c1"
+url = "https://www.lua.org/ftp/lua-5.1.tar.gz"
 
 [tools.lua."platforms.macos-arm64"]
-checksum = "sha256:1c4b4068d67061f2a2231ad2b5422e77acea1487ea9890f6320af614f4373dce"
-url = "https://www.lua.org/ftp/lua-5.5.1.tar.gz"
+checksum = "sha256:7f5bb9061eb3b9ba1e406a5aa68001a66cb82bac95748839dc02dd10048472c1"
+url = "https://www.lua.org/ftp/lua-5.1.tar.gz"
 
 [[tools.neovim]]
 version = "0.12.6"
