@@ -1,0 +1,48 @@
+[settings]
+lockfile = true
+
+[bootstrap.services.mise-history]
+builtin = "history-watch"
+
+[bootstrap.apt.sources.docker]
+uris = "https://download.docker.com/linux/ubuntu"
+components = "stable"
+key = "https://download.docker.com/linux/ubuntu/gpg"
+fingerprint = "9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88"
+
+[bootstrap.packages]
+"apt:build-essential" = "latest"
+"apt:luarocks" = "latest"
+"apt:zsh" = "latest"
+"apt:docker-ce" = "latest"
+"apt:docker-ce-cli" = "latest"
+"apt:containerd.io" = "latest"
+"apt:docker-buildx-plugin" = "latest"
+"apt:docker-compose-plugin" = "latest"
+
+[dotfiles]
+"~/.config/mise" = { mode = "track" }
+"~/.config/nvim" = { mode = "track" }
+"~/.config/wezterm" = { mode = "track" }
+"~/.gdbinit" = { mode = "track" }
+"~/.gitconfig" = { mode = "track" }
+"~/.tmux.conf" = { mode = "track" }
+"~/.zsh" = { mode = "track" }
+"~/.zshrc" = { mode = "track" }
+
+[tools]
+aws = { version = "latest", symlink_bins = "true" }
+delta = "latest"
+direnv = "latest"
+fzf = "latest"
+neovim = "latest"
+node = "latest"
+opencode = { version = "latest", allow_builds = ["@opencode/cli"] }
+prettier = "latest"
+python = "3.12"
+ripgrep = "latest"
+ruff = "latest"
+shfmt = "latest"
+terraform = "latest"
+tree-sitter = "latest"
+uv = "latest"

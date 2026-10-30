@@ -18,6 +18,7 @@ return {
   --   dir = '~/Code/neovim-plugins/clangd-lua-docs/',
   --   config = true,
   -- },
+  { 'junegunn/gv.vim' },
   { 'google/vim-jsonnet' },
   {
     'rest-nvim/rest.nvim',
@@ -54,7 +55,11 @@ return {
     'stevearc/oil.nvim',
     ---@module 'oil'
     ---@type oil.SetupOpts
-    opts = {},
+    opts = {
+      view_options = {
+        show_hidden = true,
+      },
+    },
     -- Optional dependencies
     dependencies = { 'nvim-tree/nvim-web-devicons' }, -- use if you prefer nvim-web-devicons
     -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
@@ -390,15 +395,26 @@ return {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     lazy = false,
-    opts = {
-      ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown_inline', 'vim', 'vimdoc' },
-      ignore_install = { 'markdown' },
-      -- Autoinstall languages that are not installed
-      auto_install = true,
-      highlight = { enable = true },
-      indent = { enable = true },
-      folds = { enable = true },
-    },
+    config = function()
+      require('nvim-treesitter').setup()
+      require('nvim-treesitter').install {
+        'bash',
+        'c',
+        'html',
+        'lua',
+        'markdown',
+        'markdown_inline',
+        'vim',
+        'vimdoc',
+      }
+
+      vim.api.nvim_create_autocmd('FileType', {
+        callback = function()
+          -- Not every filetype has an installed parser.
+          pcall(vim.treesitter.start)
+        end,
+      })
+    end,
   },
   {
     'windwp/nvim-ts-autotag',

@@ -65,14 +65,26 @@ return {
           -- When you move your cursor, the highlights will be cleared (the second autocommand).
           local client = vim.lsp.get_client_by_id(event.data.client_id)
           if client and client.server_capabilities.documentHighlightProvider then
+            local highlight_group = vim.api.nvim_create_augroup('lsp_document_highlight_' .. event.buf, { clear = true })
+
             vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
               buffer = event.buf,
+              group = highlight_group,
               callback = vim.lsp.buf.document_highlight,
             })
 
             vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
               buffer = event.buf,
+              group = highlight_group,
               callback = vim.lsp.buf.clear_references,
+            })
+
+            -- Clear the autocommands when the LSP client detaches
+            vim.api.nvim_create_autocmd('LspDetach', {
+              buffer = event.buf,
+              callback = function()
+                vim.api.nvim_clear_autocmds { group = highlight_group }
+              end,
             })
           end
         end,
@@ -82,6 +94,7 @@ return {
         bashls = {},
         eslint = {},
         clangd = {},
+        -- copilot = {},
         docker_compose_language_service = {},
         dockerls = {},
         basedpyright = {},
@@ -93,6 +106,7 @@ return {
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
         ts_ls = {},
+        hadolint = {},
         helm_ls = {},
         html = {},
         jsonls = {},
@@ -148,8 +162,38 @@ return {
       if vim.fn.executable 'go' == 1 then
         mason_servers = vim.tbl_extend('error', mason_servers, {
           jsonnet_ls = {},
-          golangci_lint_ls = {},
-          gopls = {},
+          golangci_lint_ls = {
+            init_options = {
+              command = {
+                'golangci-lint',
+                'run',
+                '--new-from-rev=', -- do not ignore baselined errors
+                '--fix=false', -- do not write fixes to file
+                '--output.text.path=',
+                '--output.tab.path=',
+                '--output.html.path=',
+                '--output.checkstyle.path=',
+                '--output.junit-xml.path=',
+                '--output.teamcity.path=',
+                '--output.sarif.path=',
+                '--show-stats=false',
+                '--output.json.path=stdout',
+              },
+            },
+          },
+          gopls = {
+            on_attach = function(client, bufnr)
+              local buf_name = vim.api.nvim_buf_get_name(bufnr)
+
+              -- Guard against non-file schemes like fugitive://
+              if buf_name:match '^%w+://' and not buf_name:match '^file://' then
+                vim.schedule(function()
+                  vim.lsp.buf_detach_client(bufnr, client.id)
+                end)
+                return
+              end
+            end,
+          },
         })
       end
 
@@ -212,6 +256,14 @@ return {
       for server_name, config in pairs(mason_servers) do
         vim.lsp.config(server_name, config)
         vim.lsp.enable(server_name)
+      end
+
+      if vim.fn.executable 'mise' == 1 then
+        vim.lsp.config('mise', {
+          cmd = { 'mise', 'lsp' },
+          filetypes = { 'toml' },
+        })
+        vim.lsp.enable 'mise'
       end
     end,
   },

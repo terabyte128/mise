@@ -174,6 +174,8 @@ alias ga="git add"
 alias gc="git commit"
 alias gco="git checkout"
 alias gdiff="git diff"
+alias gd="git diff"
+alias gds="git diff --staged"
 alias gl="git pull"
 alias glog="git log"
 alias gre="git rebase"
@@ -307,6 +309,7 @@ autoload -U +X bashcompinit && bashcompinit
 command_exists eksctl && source <(eksctl completion zsh)
 command_exists aws && command_exists aws_completer && complete -C "$(which aws_completer)" aws
 command_exists terraform && complete -o nospace -C $(which terraform) terraform
+command_exists mise && source <(mise completion zsh)
 
 # use bash-style word deletion (split on /)
 autoload -U select-word-style
@@ -334,19 +337,7 @@ bindkey '^N' down-line-or-history
 command_exists pio && eval "$(_PIO_COMPLETE=zsh_source pio)"
 # End: PlatformIO Core completion support
 
-# fuzzy find
-if [[ -d "$HOME/.config/fzf-zsh-plugin/bin" ]]; then
-    export PATH="$PATH:$HOME/.config/fzf-zsh-plugin/bin"
-    source "$HOME/.config/fzf-zsh-plugin/fzf-zsh-plugin.plugin.zsh"
-else
-    bindkey '^R' history-incremental-search-backward
-fi
-
 [[ -S ~/.1password/agent.sock ]] && export SSH_AUTH_SOCK="$HOME/.1password/agent.sock"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export FIRST_NAME=Sam
 export LAST_NAME=Wolfson
@@ -430,7 +421,6 @@ function vactivate() {
 #     export TERM="xterm-256color"
 # fi
 
-command_exists fzf && source <(fzf --zsh)
 
 listening() {
     if [ $# -eq 0 ]; then
@@ -451,11 +441,22 @@ alias lightmode='echo light > ~/.config/appearance'
 # opencode
 export PATH="$HOME/.opencode/bin:$PATH"
 
+# fnm
+FNM_PATH="/home/samwolfson/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "$(fnm env --shell zsh)"
+fi
+
 # pnpm
-export PNPM_HOME="/Users/samwolfson/Library/pnpm"
+export PNPM_HOME="/home/samwolfson/.local/share/pnpm"
 case ":$PATH:" in
-  *":$PNPM_HOME/bin:"*) ;;
-  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
-eval "$(/Users/samwolfson/.local/bin/mise activate zsh)"
+eval "$(/home/samwolfson/.local/bin/mise activate zsh)"
+
+command_exists fzf && source <(fzf --zsh)
+
+export COLORTERM=truecolor # tell opencode it can use true color
