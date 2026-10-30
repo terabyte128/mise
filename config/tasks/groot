@@ -1,3 +1,11 @@
 #! /usr/bin/env bash
 
-#MISE description="Return the git root of the current repository"
+#MISE description="Go to the git root of the current repository"
+
+root="$(git rev-parse --show-toplevel)"
+
+if [[ "$?" != "0" ]]; then
+    return 1
+fi
+
+cd "$root"
