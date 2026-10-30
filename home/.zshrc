@@ -3,7 +3,6 @@ autoload -Uz promptinit
 promptinit
 prompt redhat
 
-
 # fancy custom prompt stuff
 autoload -Uz vcs_info
 
