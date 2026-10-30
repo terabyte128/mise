@@ -14,12 +14,6 @@
       "variants": []
     },
     {
-      "path": "home/.config/opencode",
-      "autosave": true,
-      "encrypt": false,
-      "variants": []
-    },
-    {
       "path": "home/.config/wezterm",
       "autosave": true,
       "encrypt": false,
