@@ -1,5 +1,6 @@
 [settings]
 lockfile = true
+history = { sync = "manual" }
 
 [bootstrap.services.mise-history]
 builtin = "history-watch"
