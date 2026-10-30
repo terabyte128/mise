@@ -23,7 +23,7 @@ fingerprint = "9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88"
 [dotfiles]
 "~/.config/mise" = { mode = "track" }
 "~/.config/nvim" = { mode = "track" }
-"~/.config/opencode" = {}
+"~/.config/opencode" = { mode = "track" }
 "~/.config/wezterm" = { mode = "track" }
 "~/.gdbinit" = { mode = "track" }
 "~/.gitconfig" = { mode = "track" }
