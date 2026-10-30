@@ -49,4 +49,4 @@ tree-sitter = "latest"
 uv = "latest"
 
 [shell_alias]
-gst = "git status"
+ggst = "git status"
