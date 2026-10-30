@@ -49,4 +49,4 @@ tree-sitter = "latest"
 uv = "latest"
 
 [shell_alias]
-ggst = "asdfjakj"
+dm = "echo dark > ~/.config/appearance"
