@@ -35,6 +35,7 @@ aws = { version = "latest", symlink_bins = "true" }
 delta = "latest"
 direnv = "latest"
 fzf = "latest"
+lua = "latest"
 neovim = "latest"
 node = "latest"
 opencode = { version = "latest", allow_builds = ["@opencode/cli"] }

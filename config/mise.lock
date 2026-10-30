@@ -63,6 +63,19 @@ checksum = "sha256:ada808c7401b9949ce8842274ac16a6b6193fd32dcada396884a6a9a89e59
 url = "https://github.com/junegunn/fzf/releases/download/v0.74.5/fzf-0.74.5-darwin_arm64.tar.gz"
 url_api = "https://api.github.com/repos/junegunn/fzf/releases/assets/629581702"
 
+[[tools.lua]]
+version = "5.5.1"
+backend = "vfox:jdx/vfox-lua"
+specifiers = ["latest"]
+
+[tools.lua."platforms.linux-x64"]
+checksum = "sha256:1c4b4068d67061f2a2231ad2b5422e77acea1487ea9890f6320af614f4373dce"
+url = "https://www.lua.org/ftp/lua-5.5.1.tar.gz"
+
+[tools.lua."platforms.macos-arm64"]
+checksum = "sha256:1c4b4068d67061f2a2231ad2b5422e77acea1487ea9890f6320af614f4373dce"
+url = "https://www.lua.org/ftp/lua-5.5.1.tar.gz"
+
 [[tools.neovim]]
 version = "0.12.6"
 backend = "vfox:jdx/vfox-neovim"
