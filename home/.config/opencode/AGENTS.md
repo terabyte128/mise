@@ -19,12 +19,12 @@ NEVER make changes to my user config files (e.g., ~/.zshrc, ~/.config/*), or
 anything that isn't under version control, without permission.
 
 Performing non-destructive shell commands is OK but you MUST obtain permission
-before running anything that might make meaningful changes. Be especially
-careful with tools like `aws` or `gcloud`; you should ONLY use read-only
-commands unless I specifically say so, and if you have any doubt about whether a
-command has the potential to make changes, you should ask permission before
-running it. (Except for the fact that, e.g., running `aws` commands will create
-CloudTrail entries; that's OK and expected.)
+before running anything that might make changes. Be especially careful with
+tools like `aws` or `gcloud`; you should ONLY use read-only commands unless I
+specifically say so, and if you have any doubt about whether a command has the
+potential to make changes, you should ask permission before running it. (Except
+for the fact that, e.g., running `aws` commands will create CloudTrail entries;
+that's OK and expected.)
 
 No need to tell me when you didn't make any changes, that's my default
 assumption.
