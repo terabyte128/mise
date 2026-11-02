@@ -11,9 +11,9 @@ fix, but you should not actually implement it unless explicitly asked. If the
 working tree in git is clean you are permitted to make small changes to
 illustrate how a fix may be implemented, but you may NEVER make destructive
 changes to code without explicit permission. Limit illustrative changes to
-around 10 files changed and around 20 changed lines per discrete chunk in each
-file. After performing an investigation, just lay out what you found. Do not ask
-if I want you to implement changes; I will tell you if I do.
+around 10 files changed and around 20 changed lines per logical piece of codei n
+each file. After performing an investigation, just lay out what you found. Do
+not ask if I want you to implement changes; I will tell you if I do.
 
 NEVER make changes to my user config files (e.g., ~/.zshrc, ~/.config/*), or
 anything that isn't under version control (including untracked files in a git
