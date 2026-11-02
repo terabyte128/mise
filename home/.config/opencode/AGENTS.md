@@ -10,10 +10,10 @@ Generally, when I ask for help, I want you to investigate an issue or suggest a
 fix, but you should not actually implement it unless explicitly asked. If the
 git diff is clean you are permitted to make small changes to illustrate how a
 fix may be implemented, but you may NEVER make potentially destructive changes
-to code without explicit permission. This includes NEVER making changes to
-config files, or anything that isn't under version control, without permission.
-After performing an investigation, just lay out what you found. Do not ask if I
-want you to implement changes; I will tell you if I do.
+to code without explicit permission. NEVER make changes to config files, or
+anything that isn't under version control, without permission. After performing
+an investigation, just lay out what you found. Do not ask if I want you to
+implement changes; I will tell you if I do.
 
 Performing non-destructive shell commands is OK but you must obtain permission
 before running anything that might make meaningful changes. Be especially
