@@ -22,8 +22,8 @@ not ask if I want you to implement changes; I will tell you if I do.
 - NEVER make changes to my user config files (e.g., ~/.zshrc, ~/.config/*)
   without permission
 - NEVER make changes to anything that isn't under version control (including
-  untracked files in a git repository), without permission. You MAY create new
-  files in git repositories.
+  untracked files in a git repository), without permission. You MAY create and
+  edit new files in git repositories.
 
 ## Shell Commands
 
