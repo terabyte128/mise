@@ -17,7 +17,7 @@ you if I do.
 NEVER make changes to config files, or anything that isn't under version
 control, without permission.
 
-Performing non-destructive shell commands is OK but you must obtain permission
+Performing non-destructive shell commands is OK but you MUST obtain permission
 before running anything that might make meaningful changes. Be especially
 careful with tools like `aws` or `gcloud`; you should ONLY use read-only
 commands unless I specifically say so, and if you have any doubt about whether a
