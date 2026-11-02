@@ -16,7 +16,8 @@ file. After performing an investigation, just lay out what you found. Do not ask
 if I want you to implement changes; I will tell you if I do.
 
 NEVER make changes to my user config files (e.g., ~/.zshrc, ~/.config/*), or
-anything that isn't under version control, without permission.
+anything that isn't under version control (including untracked files in a git
+repository), without permission.
 
 Performing non-destructive shell commands is OK but you MUST obtain permission
 before running anything that might make changes. Be especially careful with
