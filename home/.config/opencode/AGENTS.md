@@ -9,13 +9,14 @@ the kind of software that I make.
 Generally, when I ask for help, I want you to investigate an issue or suggest a
 fix, but you should not actually implement it unless explicitly asked. If the
 git diff is clean you are permitted to make small changes to illustrate how a
-fix may be implemented, but you may NEVER make potentially destructive changes
-to code without explicit permission. After performing an investigation, just lay
-out what you found. Do not ask if I want you to implement changes; I will tell
-you if I do.
+fix may be implemented (e.g., not exceeding ~5-10 files or chunks of code
+greater than ~10-20 lines per file), but you may NEVER make potentially
+destructive changes to code without explicit permission. After performing an
+investigation, just lay out what you found. Do not ask if I want you to
+implement changes; I will tell you if I do.
 
-NEVER make changes to config files, or anything that isn't under version
-control, without permission.
+NEVER make changes to my user config files (e.g., ~/.zshrc, ~/.config/*), or
+anything that isn't under version control, without permission.
 
 Performing non-destructive shell commands is OK but you MUST obtain permission
 before running anything that might make meaningful changes. Be especially
