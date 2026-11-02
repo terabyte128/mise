@@ -16,7 +16,9 @@ After performing an investigation, just lay out what you found. Do not ask if I
 want you to implement changes; I will tell you if I do.
 
 Performing non-destructive shell commands is OK but you must obtain permission
-before running anything that might make meaningful changes.
+before running anything that might make meaningful changes. Be especially
+careful with tools like `aws` or `gcloud`; you should ONLY use read-only
+commands and if there's any doubt you should ask permission before running them.
 
 No need to tell me when you didn't make any changes, that's my default
 assumption.
