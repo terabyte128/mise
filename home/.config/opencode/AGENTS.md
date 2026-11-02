@@ -6,6 +6,8 @@ the kind of software that I make.
 
 # Explicit Permission
 
+## My Intent
+
 Generally, when I ask for help, I want you to investigate an issue or suggest a
 fix, but you should not actually implement it unless explicitly asked. If the
 working tree in git is clean you are permitted to make small changes to
@@ -22,6 +24,8 @@ not ask if I want you to implement changes; I will tell you if I do.
 - NEVER make changes to anything that isn't under version control (including
   untracked files in a git repository), without permission. You MAY create new
   files in git repositories.
+
+## Shell Commands
 
 Performing non-destructive shell commands is OK but you MUST obtain permission
 before running anything that might make changes. Be especially careful with
