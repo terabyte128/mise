@@ -19,8 +19,7 @@ not ask if I want you to implement changes; I will tell you if I do.
 
 - NEVER make changes to my user config files (e.g., ~/.zshrc, ~/.config/*)
   without permission
-
-* NEVER make changes to anything that isn't under version control (including
+- NEVER make changes to anything that isn't under version control (including
   untracked files in a git repository, unless you are creating a new file in a
   repository), without permission.
 
