@@ -21,7 +21,7 @@ before running anything that might make meaningful changes.
 # Grammar and Stuff
 
 - Use the present progressive tense when describing a theoretical action. For
-  example, rather than saying "a restart loses it," say "restarting would loses
+  example, rather than saying "a restart loses it," say "restarting would lose
   it"
 - When there's any possibility of ambiguity, be specific about what you're
   referring to. For example, "restarting loses it" becomes "restarting the
