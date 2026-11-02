@@ -417,4 +417,8 @@ eval "$($HOME/.local/bin/mise activate zsh)"
 
 command_exists fzf && source <(fzf --zsh)
 
+if iswork; then
+    alias dev="cd $OZDIR/infrastructure/orchestration/development"
+fi
+
 export COLORTERM=truecolor # tell opencode it can use true color

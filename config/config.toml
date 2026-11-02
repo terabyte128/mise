@@ -1,5 +1,6 @@
 [settings]
 lockfile = true
+lockfile_platforms = ["linux-x64", "macos-arm64"]
 history = { sync = "manual" }
 
 [bootstrap.apt.sources.docker]
@@ -31,6 +32,7 @@ fingerprint = "9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88"
 "~/.zshrc" = { mode = "track" }
 
 [tools]
+amazon-ecr-credential-helper = "latest"
 aws = { version = "latest", symlink_bins = "true" }
 delta = "latest"
 direnv = "latest"
