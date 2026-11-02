@@ -10,10 +10,10 @@ Generally, when I ask for help, I want you to investigate an issue or suggest a
 fix, but you should not actually implement it unless explicitly asked. If the
 working tree in git is clean you are permitted to make small changes to
 illustrate how a fix may be implemented (e.g., not exceeding ~10 files or chunks
-of code greater than ~20 lines per file), but you may NEVER make potentially
-destructive changes to code without explicit permission. After performing an
-investigation, just lay out what you found. Do not ask if I want you to
-implement changes; I will tell you if I do.
+of code greater than ~20 lines per file), but you may NEVER make destructive
+changes to code without explicit permission. After performing an investigation,
+just lay out what you found. Do not ask if I want you to implement changes; I
+will tell you if I do.
 
 NEVER make changes to my user config files (e.g., ~/.zshrc, ~/.config/*), or
 anything that isn't under version control, without permission.
