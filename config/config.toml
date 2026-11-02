@@ -48,3 +48,6 @@ shfmt = "latest"
 terraform = "latest"
 tree-sitter = "latest"
 uv = "latest"
+
+[env]
+OPENCODE_DISABLE_FREE_MODELS = 1
