@@ -20,7 +20,7 @@ before running anything that might make meaningful changes. Be especially
 careful with tools like `aws` or `gcloud`; you should ONLY use read-only
 commands unless I specifically say so, and if you have any doubt about whether a
 command has the potential to make meaningful changes, you should ask permission
-before running them.
+before running it.
 
 No need to tell me when you didn't make any changes, that's my default
 assumption.
