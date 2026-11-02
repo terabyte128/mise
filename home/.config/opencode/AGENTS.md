@@ -26,8 +26,8 @@ before running anything that might make meaningful changes.
 - When there's any possibility of ambiguity, be specific about what you're
   referring to. For example, "restarting loses it" becomes "restarting the
   server process loses it"
-- Brevity isn't everything. If a slightly longer rephrasing flows better, then
-  use it.
+- Favor clarity and readability over brevity. If a slightly longer phrasing
+  flows better, or is more specific, use that.
 
 # Other Stuff
 
