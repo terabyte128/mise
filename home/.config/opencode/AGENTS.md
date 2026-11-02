@@ -18,7 +18,7 @@ want you to implement changes; I will tell you if I do.
 Performing non-destructive shell commands is OK but you must obtain permission
 before running anything that might make meaningful changes.
 
-No need to tell me that you didn't make any changes, that's my default
+No need to tell me when you didn't make any changes, that's my default
 assumption.
 
 # Grammar and Stuff
