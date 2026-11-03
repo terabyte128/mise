@@ -50,5 +50,8 @@ terraform = "latest"
 tree-sitter = "latest"
 uv = "latest"
 
+[shell_alias]
+tf = "terraform"
+
 [env]
 OPENCODE_DISABLE_FREE_MODELS = 1

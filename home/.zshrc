@@ -262,12 +262,6 @@ fi
 
 autoload -U +X bashcompinit && bashcompinit
 
-# autocompletion
-# command_exists kubectl && source <(kubectl completion zsh)
-command_exists eksctl && source <(eksctl completion zsh)
-command_exists aws && command_exists aws_completer && complete -C "$(which aws_completer)" aws
-command_exists terraform && complete -o nospace -C $(which terraform) terraform
-command_exists mise && source <(mise completion zsh)
 
 # use bash-style word deletion (split on /)
 autoload -U select-word-style
@@ -413,7 +407,15 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
 eval "$($HOME/.local/bin/mise activate zsh)"
+
+# autocompletion comes after mise so everything is in the PATH
+# command_exists kubectl && source <(kubectl completion zsh)
+command_exists eksctl && source <(eksctl completion zsh)
+command_exists aws && command_exists aws_completer && complete -C "$(which aws_completer)" aws
+command_exists terraform && complete -o nospace -C $(which terraform) terraform
+command_exists mise && source <(mise completion zsh)
 
 command_exists fzf && source <(fzf --zsh)
 
