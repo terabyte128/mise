@@ -53,6 +53,10 @@ assumption.
 - Using the second-person tense is preferable, especially where it improves
   clarity. For example, say "you can check the contents to confirm it" instead
   of "checking the contents confirms it."
+- Avoid using colons where writing out a conjunction sounds better. For example,
+  instead of "Unknown types need care: they may indicate a producer was deployed
+  before its consumer", say "Unknown types need care, because they may indicate
+  a producer was deployed before its consumer."
 
 # Other Stuff
 
