@@ -5,7 +5,10 @@
       "path": "config",
       "autosave": true,
       "encrypt": false,
-      "variants": []
+      "variants": [],
+      "exclude": [
+        "mise.local.lock"
+      ]
     },
     {
       "path": "home/.config/nvim",
@@ -70,7 +73,6 @@
     "config/locks/opencode/2.1.4~009061c2/package.json": 384,
     "config/locks/prettier/3.9.10/aube-lock.yaml": 384,
     "config/locks/prettier/3.9.10/package.json": 384,
-    "config/mise.local.lock": 384,
     "config/mise.lock": 384,
     "home/.config": 448,
     "home/.config/nvim": 509,
