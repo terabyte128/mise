@@ -15,6 +15,36 @@ url = "https://storage.googleapis.com/cloud-sdk-release/google-cloud-sdk-591.0.0
 checksum = "sha256:5552277a00e32810929aa3b727116727453c75c49fe413604d370ddb52885c26"
 url = "https://storage.googleapis.com/cloud-sdk-release/google-cloud-sdk-591.0.0-darwin-arm.tar.gz"
 
+[[tools.go]]
+version = "1.27.3"
+backend = "core:go"
+specifiers = ["1.27.3"]
+
+[tools.go."platforms.linux-x64"]
+checksum = "sha256:65efbc80fdc1fa2cd2631cad5b481777a68e8725f34e89f50fc6ac714e379b40"
+url = "https://dl.google.com/go/go1.27.3.linux-amd64.tar.gz"
+
+[tools.go."platforms.macos-arm64"]
+checksum = "sha256:dd3908cf20959d798c1e06ebe5b72213f0505ce01373b40ce3110975a6cd99c2"
+url = "https://dl.google.com/go/go1.27.3.darwin-arm64.tar.gz"
+
+[[tools.golangci-lint]]
+version = "2.15.0"
+backend = "aqua:golangci/golangci-lint"
+specifiers = ["latest"]
+
+[tools.golangci-lint."platforms.linux-x64"]
+checksum = "sha256:9b7fe6a6bf6334b98decf8d86b11415ea7889afdabdd1959fdce23af2a9ebcea"
+url = "https://github.com/golangci/golangci-lint/releases/download/v2.15.0/golangci-lint-2.15.0-linux-amd64.tar.gz"
+url_api = "https://api.github.com/repos/golangci/golangci-lint/releases/assets/647132535"
+provenance = "github-attestations"
+
+[tools.golangci-lint."platforms.macos-arm64"]
+checksum = "sha256:d1e409481a8ca846c4bc97e781eb5cb1bd5c23353a0b3977a1cbda1b1b6447d5"
+url = "https://github.com/golangci/golangci-lint/releases/download/v2.15.0/golangci-lint-2.15.0-darwin-arm64.tar.gz"
+url_api = "https://api.github.com/repos/golangci/golangci-lint/releases/assets/647132534"
+provenance = "github-attestations"
+
 [[tools.kubectl]]
 version = "1.36.6"
 backend = "aqua:kubernetes/kubernetes/kubectl"
