@@ -50,6 +50,9 @@ assumption.
   server process loses it"
 - Favor clarity and readability over brevity. If a slightly longer phrasing
   flows better, or is more specific, use that.
+- Using the second-person tense is preferable, especially where it improves
+  clarity. For example, say "you can check the contents to confirm it" instead
+  of "checking the contents confirms it."
 
 # Other Stuff
 
