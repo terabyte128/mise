@@ -1,0 +1,33 @@
+[bootstrap.macos.defaults]
+"com.apple.driver.AppleBluetoothMultitouch.trackpad" = { TrackpadRightClick = true }
+"com.apple.desktopservices" = { DSDontWriteNetworkStores = true }
+
+[bootstrap.macos.defaults."com.apple.dock"]
+showhidden = true  # Make Dock icons of hidden applications translucent
+autohide = true    # automatically hide and show
+autohide-delay = 0 # remove the auto-hiding delay
+
+[bootstrap.macos.defaults."com.apple.finder"]
+FXEnableExtensionChangeWarning = false # disable the warning when changing a file extension
+ShowPathbar = true
+ShowStatusBar = true
+_FXShowPosixPathInTitle = true         # display full POSIX path as window title
+FXPreferredViewStyle = "clmv"          # use column view in all Finder windows
+QLEnableTextSelection = true           # allow text selection in Quick Look
+
+[bootstrap.macos.defaults.NSGlobalDomain]
+NSDisableAutomaticTermination = true      # System - Disable automatic termination of inactive apps.
+NSNavPanelExpandedStateForSaveMode = true # System - Expand save panel by default.
+NSWindowResizeTime = 0.001                # System - Increase window resize speed for Cocoa applications.
+NSQuitAlwaysKeepsWindows = false          # System - Disable window resume system-wide.
+AppleKeyboardUIMode = 3                   # Keyboard - Enable keyboard access for all controls.
+KeyRepeat = 0                             # Keyboard - Set a fast keyboard repeat rate.
+NSDocumentSaveNewDocumentsToCloud = false # iCloud - Save to disk by default.
+AppleShowAllExtensions = true             # Finder - Show filename extensions.
+WebKitDeveloperExtras = true              # Safari - Add a context menu item for showing the Web Inspector in web views.
+PMPrintingExpandedStateForPrint = true    # Printer - Expand print panel by default.
+
+[bootstrap.macos.defaults."com.apple.TextEdit"]
+RichText = 0
+PlainTextEncoding = 4
+PlainTextEncodingForWrite = 4
