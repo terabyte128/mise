@@ -7,7 +7,6 @@
 [alias]
 	rev = "!f(){ BRANCH=\"$(git rev-parse --abbrev-ref HEAD)\"; git push -u origin \"$BRANCH\":user/$USER/\"$BRANCH\" --force; }; f"
 	exec = "!exec "
-	rename ="!f(){ BRANCH=\"$(git rev-parse --abbrev-ref HEAD)\"; git branch -m \"$BRANCH\" \"$1\"; }; f"
 
 [init]
 	defaultBranch = main
@@ -17,19 +16,6 @@
 
 [core]
 	excludesfile = ~/.gitignore
-	hooksPath = ~/.config/git/hooks
 
 [include]
 	path = .config/gitconfig-local
-
-[diff]
-	tool = nvimdiff
-
-[difftool]
-	prompt = false
-
-[merge]
-	tool = nvimdiff
-
-[mergetool]
-	prompt = false

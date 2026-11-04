@@ -3,6 +3,7 @@ autoload -Uz promptinit
 promptinit
 prompt redhat
 
+
 # fancy custom prompt stuff
 autoload -Uz vcs_info
 
@@ -232,6 +233,45 @@ function squash() {
     git rebase -i --autosquash $branch
 }
 
+function qh() {
+    if [ -z $argv[2] ]; then
+        dir=$PWD
+    else
+        dir=$argv[2]
+    fi
+
+    grep -rn -I \
+        --exclude-dir "\.terraform*" \
+        --exclude-dir "install" \
+        --exclude-dir "build" \
+        --exclude-dir ".mypy_cache" \
+        --exclude-dir ".venv" \
+        --exclude-dir ".git"  \
+        --exclude-dir ".cache" \
+        --exclude-dir "*.egg-info" \
+        --exclude-dir "node_modules" \
+        --exclude-dir "swagger-ui" \
+        --exclude-dir ".next" \
+        --exclude "*.map" \
+        --exclude "noise-field.js" \
+        --exclude "*bundle.js" \
+        --exclude "tf_state.json" \
+        --exclude "*.tfstate" \
+        --exclude-dir ".next" \
+        --exclude-dir "vendor" \
+        --exclude-dir "bin" \
+        --exclude-dir ".ipynb_checkpoints" \
+        $argv[1] $dir
+}
+
+function q() {
+    qh $argv[1] $OZDIR
+}
+
+function goto() {
+    cd $OZDIR/$1
+}
+
 function kc() {
     if [[ ! -z $1 ]]; then
         kubectl config set-context --current --namespace=$1
@@ -240,6 +280,8 @@ function kc() {
     fi
     direnv reload
 }
+
+alias kgc="kubectl config view --minify 2>&1 | grep namespace | cut -c 16-"
 
 function groot() {
     root="$(git rev-parse --show-toplevel)"
@@ -262,6 +304,11 @@ fi
 
 autoload -U +X bashcompinit && bashcompinit
 
+# autocompletion
+# command_exists kubectl && source <(kubectl completion zsh)
+command_exists eksctl && source <(eksctl completion zsh)
+command_exists aws && command_exists aws_completer && complete -C "$(which aws_completer)" aws
+command_exists terraform && complete -o nospace -C $(which terraform) terraform
 
 # use bash-style word deletion (split on /)
 autoload -U select-word-style
@@ -288,6 +335,14 @@ bindkey '^N' down-line-or-history
 [[ -d ~/.platformio/penv/bin ]] && PATH=$PATH:$HOME/.platformio/penv/bin
 command_exists pio && eval "$(_PIO_COMPLETE=zsh_source pio)"
 # End: PlatformIO Core completion support
+
+# fuzzy find
+if [[ -d "$HOME/.config/fzf-zsh-plugin/bin" ]]; then
+    export PATH="$PATH:$HOME/.config/fzf-zsh-plugin/bin"
+    source "$HOME/.config/fzf-zsh-plugin/fzf-zsh-plugin.plugin.zsh"
+else
+    bindkey '^R' history-incremental-search-backward
+fi
 
 [[ -S ~/.1password/agent.sock ]] && export SSH_AUTH_SOCK="$HOME/.1password/agent.sock"
 
@@ -373,6 +428,7 @@ function vactivate() {
 #     export TERM="xterm-256color"
 # fi
 
+command_exists fzf && source <(fzf --zsh)
 
 listening() {
     if [ $# -eq 0 ]; then
@@ -401,26 +457,9 @@ if [ -d "$FNM_PATH" ]; then
 fi
 
 # pnpm
-export PNPM_HOME="/home/samwolfson/.local/share/pnpm"
+export PNPM_HOME="$HOME/.local/share/pnpm"
 case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
 esac
 # pnpm end
-
-eval "$($HOME/.local/bin/mise activate zsh)"
-
-# autocompletion comes after mise so everything is in the PATH
-# command_exists kubectl && source <(kubectl completion zsh)
-command_exists eksctl && source <(eksctl completion zsh)
-command_exists aws && command_exists aws_completer && complete -C "$(which aws_completer)" aws
-command_exists terraform && complete -o nospace -C $(which terraform) terraform
-command_exists mise && source <(mise completion zsh)
-
-command_exists fzf && source <(fzf --zsh)
-
-if iswork; then
-    alias dev="cd $OZDIR/infrastructure/orchestration/development"
-fi
-
-export COLORTERM=truecolor # tell opencode it can use true color

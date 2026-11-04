@@ -64,6 +64,15 @@ end
 
 config.hyperlink_rules = hyperlink_rules
 
+config.bypass_mouse_reporting_modifiers = "CMD"
+config.mouse_bindings = {
+	{
+		event = { Up = { streak = 1, button = "Left" } },
+		mods = "CMD",
+		action = wezterm.action.OpenLinkAtMouseCursor,
+	},
+}
+
 pcall(function()
 	local work = require("work")
 	work.add_work_rules(config)

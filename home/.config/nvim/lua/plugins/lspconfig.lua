@@ -65,26 +65,14 @@ return {
           -- When you move your cursor, the highlights will be cleared (the second autocommand).
           local client = vim.lsp.get_client_by_id(event.data.client_id)
           if client and client.server_capabilities.documentHighlightProvider then
-            local highlight_group = vim.api.nvim_create_augroup('lsp_document_highlight_' .. event.buf, { clear = true })
-
             vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
               buffer = event.buf,
-              group = highlight_group,
               callback = vim.lsp.buf.document_highlight,
             })
 
             vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
               buffer = event.buf,
-              group = highlight_group,
               callback = vim.lsp.buf.clear_references,
-            })
-
-            -- Clear the autocommands when the LSP client detaches
-            vim.api.nvim_create_autocmd('LspDetach', {
-              buffer = event.buf,
-              callback = function()
-                vim.api.nvim_clear_autocmds { group = highlight_group }
-              end,
             })
           end
         end,
@@ -106,7 +94,6 @@ return {
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
         ts_ls = {},
-        hadolint = {},
         helm_ls = {},
         html = {},
         jsonls = {},
@@ -181,19 +168,7 @@ return {
               },
             },
           },
-          gopls = {
-            on_attach = function(client, bufnr)
-              local buf_name = vim.api.nvim_buf_get_name(bufnr)
-
-              -- Guard against non-file schemes like fugitive://
-              if buf_name:match '^%w+://' and not buf_name:match '^file://' then
-                vim.schedule(function()
-                  vim.lsp.buf_detach_client(bufnr, client.id)
-                end)
-                return
-              end
-            end,
-          },
+          gopls = {},
         })
       end
 
@@ -256,14 +231,6 @@ return {
       for server_name, config in pairs(mason_servers) do
         vim.lsp.config(server_name, config)
         vim.lsp.enable(server_name)
-      end
-
-      if vim.fn.executable 'mise' == 1 then
-        vim.lsp.config('mise', {
-          cmd = { 'mise', 'lsp' },
-          filetypes = { 'toml' },
-        })
-        vim.lsp.enable 'mise'
       end
     end,
   },
