@@ -3,9 +3,6 @@ autoload -Uz promptinit
 promptinit
 prompt redhat
 
-# fancy custom prompt stuff
-autoload -Uz vcs_info
-
 # expand prompt
 setopt PROMPT_SUBST
 
@@ -16,7 +13,8 @@ setopt PROMPT_SUBST
 zstyle ':completion:*:*:docker:*' option-stacking yes
 zstyle ':completion:*:*:docker-*:*' option-stacking yes
 
-export IS_DEV_CONTAINER=${IS_DEVCONTAINER:-false}
+# don't duplicate PATH entries
+typeset -U path
 
 function command_exists() {
     if command -v $1 &> /dev/null; then
@@ -117,7 +115,6 @@ setopt histignorealldups sharehistory
 # autoload my functions
 fpath=( ~/.zsh/completion "${fpath[@]}" )
 
-# Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=1000000
 SAVEHIST=1000000
 HISTFILE=~/.zsh_history
@@ -135,7 +132,6 @@ compinit
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' group-name ''
-zstyle ':completion:*' menu select=2
 command_exists dircolors && eval "$(dircolors -b)"
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' list-colors ''
@@ -215,9 +211,6 @@ alias kd='kubectl -n default'
 function oz() {
     groot 2>/dev/null || cd $OZDIR
 }
-
-command_exists batcat && alias bat=batcat
-command_exists nvim && alias vim="nvim"
 
 function grih() {
     git rebase -i HEAD~$1
@@ -335,10 +328,6 @@ setopt PUSHD_SILENT         # Do not print the directory stack after pushd or po
 alias d='dirs -v'
 for index ({1..9}) alias "$index"="cd +${index}"; unset index
 
-# if [[ $IS_DEV_CONTAINER = "true" ]]; then
-#     alias tmux="tmux new-session 'tmux unbind-key C-b && tmux set-option -g prefix C-v && zsh'"
-# fi
-
 if [[ -d $HOME/go/bin ]]; then
     export PATH="$PATH:$HOME/go/bin"
 fi
@@ -346,8 +335,6 @@ fi
 LINUX_CERT_PATH="/etc/ssl/certs/ca-certificates.crt"
 
 [[ -f "$LINUX_CERT_PATH" ]] && export REQUESTS_CA_BUNDLE="$LINUX_CERT_PATH"
-
-[[ -d "HOME/.cargo" ]] && . "$HOME/.cargo/env"
 
 # MULTIPLEXER
 if [[ $- =~ i ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_TTY" ]]; then
