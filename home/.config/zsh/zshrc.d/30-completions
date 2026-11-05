@@ -1,5 +1,14 @@
 # ex: set ft=zsh
 
+# commands that use modern completion
+command_exists eksctl && source <(eksctl completion zsh)
+command_exists mise && source <(mise completion zsh)
+command_exists fzf && source <(fzf --zsh) # NB: also sets up Ctrl-R search
+
+# commands that use bash-style completion
+command_exists aws && command_exists aws_completer && complete -C "$(which aws_completer)" aws
+command_exists terraform && complete -o nospace -C $(which terraform) terraform
+
 # Describe otherwise-undescribed options taking one argument; %d is its description.
 zstyle ':completion:*' auto-description 'specify: %d'
 

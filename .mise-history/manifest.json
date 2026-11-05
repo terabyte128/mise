@@ -41,7 +41,7 @@
       "encrypt": false,
       "variants": [],
       "exclude": [
-        ".local"
+        "*.local"
       ]
     },
     {
