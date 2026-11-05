@@ -23,7 +23,7 @@ export COLORTERM=truecolor
 
 # 1Password SSH agent
 sockfile="$HOME/.1password/agent.sock"
-[[ -f "$sockfile" ]] && SSH_AUTH_SOCK="$sockfile"
+[[ -S "$sockfile" ]] && export SSH_AUTH_SOCK="$sockfile"
 
 ZSH_CONFIG="$HOME/.config/zsh"
 ZSHRC_D="$ZSH_CONFIG/zshrc.d"
