@@ -2,6 +2,7 @@
 command_exists eksctl && source <(eksctl completion zsh)
 command_exists mise && source <(mise completion zsh)
 command_exists fzf && source <(fzf --zsh) # NB: also sets up Ctrl-R search
+command_exists rg && source <(rg --generate complete-zsh)
 
 # commands that use bash-style completion
 command_exists aws && command_exists aws_completer && complete -C "$(which aws_completer)" aws
