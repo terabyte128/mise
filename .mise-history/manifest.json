@@ -36,6 +36,12 @@
       "variants": []
     },
     {
+      "path": "home/.config/zsh",
+      "autosave": true,
+      "encrypt": false,
+      "variants": []
+    },
+    {
       "path": "home/.gdbinit",
       "autosave": true,
       "encrypt": false,
@@ -121,7 +127,6 @@
     "home/.zsh/completion/_rg": 436,
     "home/.zsh/completion/_step": 384,
     "home/.zsh/completion/_stern": 384,
-    "home/.zsh/shrink-path.plugin.zsh": 436,
-    "home/.zshrc": 436
+    "home/.zsh/shrink-path.plugin.zsh": 436
   }
 }
