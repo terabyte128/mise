@@ -1,7 +1,12 @@
-# load completion system as early as possible
-autoload -Uz compinit
+# load modern completion
+autoload -U -z compinit
 compinit
 
+# load bash-style completion
+autoload -U +X bashcompinit
+bashcompinit
+
+# active mise shims
 eval "$($HOME/.local/bin/mise activate zsh)"
 
 # deduplicate path entries
@@ -12,6 +17,13 @@ setopt histignorealldups sharehistory
 HISTSIZE=1000000
 SAVEHIST=1000000
 HISTFILE=~/.zsh_history
+
+# hint to programs like opencode that the terminal supports truecolor
+export COLORTERM=truecolor
+
+# 1Password SSH agent
+sockfile="$HOME/.1password/agent.sock"
+[[ -f "$sockfile" ]] && SSH_AUTH_SOCK="$sockfile"
 
 ZSH_CONFIG="$HOME/.config/zsh"
 ZSHRC_D="$ZSH_CONFIG/zshrc.d"

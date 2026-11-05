@@ -1,5 +1,3 @@
-# ex: set ft=zsh
-
 setopt PROMPT_SUBST # enable prompt substitution
 
 source "$HOME/.config/zsh/plugins/shrink-path.plugin.zsh"
@@ -7,7 +5,7 @@ source "$HOME/.config/zsh/plugins/shrink-path.plugin.zsh"
 leftprompt() {
     local builder=""
 
-    if [[ $IS_DEV_CONTAINER = "true" ]]; then
+    if [[ $IS_DEVCONTAINER = "true" ]]; then
         builder+="%F{blue}d%f "
     fi
 

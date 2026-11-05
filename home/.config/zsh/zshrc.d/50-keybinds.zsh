@@ -1,5 +1,3 @@
-# ex: set ft=zsh
-
 # use bash-style word deletion (split on /)
 autoload -U select-word-style
 select-word-style bash
