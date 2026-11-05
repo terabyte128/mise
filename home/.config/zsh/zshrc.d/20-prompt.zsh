@@ -1,5 +1,3 @@
-# ex: set ft=zsh
-
 setopt PROMPT_SUBST # enable prompt substitution
 
 source "$HOME/.config/zsh/plugins/shrink-path.plugin.zsh"

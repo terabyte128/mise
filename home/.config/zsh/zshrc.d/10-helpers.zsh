@@ -1,5 +1,3 @@
-# ex: ft=bash
-
 command_exists() {
     if command -v "$1" &>/dev/null; then
         return 0

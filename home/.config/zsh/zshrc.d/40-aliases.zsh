@@ -1,5 +1,3 @@
-# ex: set ft=zsh
-
 # git
 alias gst="git status"
 alias ga="git add"

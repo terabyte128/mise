@@ -1,5 +1,3 @@
-# ex: set ft=zsh
-
 # commands that use modern completion
 command_exists eksctl && source <(eksctl completion zsh)
 command_exists mise && source <(mise completion zsh)
