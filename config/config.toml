@@ -28,6 +28,7 @@ fingerprint = "9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88"
 "~/.config/opencode/AGENTS.md" = { mode = "track" }
 "~/.config/opencode/skills" = { mode = "track" }
 "~/.config/wezterm" = { mode = "track" }
+"~/.config/zsh" = { mode = "track", exclude = [".local"] }
 "~/.gdbinit" = { mode = "track" }
 "~/.gitconfig" = { mode = "track" }
 "~/.tmux.conf" = { mode = "track" }
@@ -48,6 +49,7 @@ prettier = "latest"
 python = "3.12"
 ripgrep = "latest"
 ruff = "latest"
+shellcheck = "latest"
 shfmt = "latest"
 terraform = "latest"
 tree-sitter = "latest"
