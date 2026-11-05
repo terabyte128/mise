@@ -39,7 +39,10 @@
       "path": "home/.config/zsh",
       "autosave": true,
       "encrypt": false,
-      "variants": []
+      "variants": [],
+      "exclude": [
+        ".local"
+      ]
     },
     {
       "path": "home/.gdbinit",
