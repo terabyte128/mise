@@ -20,7 +20,10 @@ fingerprint = "9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88"
 "apt:docker-compose-plugin" = "latest"
 
 [dotfiles]
-"~/.config/mise" = { mode = "track", exclude = ["mise.local.lock"] }
+"~/.config/mise" = { mode = "track", exclude = [
+  "mise.local.lock",
+  "local-tasks/**",
+] }
 "~/.config/nvim" = { mode = "track" }
 "~/.config/opencode/AGENTS.md" = { mode = "track" }
 "~/.config/opencode/skills" = { mode = "track" }
@@ -55,3 +58,6 @@ tf = "terraform"
 
 [env]
 OPENCODE_DISABLE_FREE_MODELS = 1
+
+[task_config]
+includes = ["{{ config_source | dirname }}/local-tasks"]
