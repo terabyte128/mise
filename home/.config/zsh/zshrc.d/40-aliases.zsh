@@ -62,6 +62,8 @@ _klfa() {
     done
 }
 
+compdef _klfa klfa
+
 kc() {
     if [[ ! -z $1 ]]; then
         kubectl config set-context --current --namespace=$1
@@ -70,8 +72,6 @@ kc() {
     fi
     direnv reload
 }
-
-compdef _klfa klfa
 
 # manually set appearance, for ssh
 alias darkmode='echo dark > ~/.config/appearance'

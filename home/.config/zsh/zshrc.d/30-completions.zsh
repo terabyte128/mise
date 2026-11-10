@@ -5,8 +5,8 @@ command_exists fzf && source <(fzf --zsh) # NB: also sets up Ctrl-R search
 command_exists rg && source <(rg --generate complete-zsh)
 
 # commands that use bash-style completion
-command_exists aws && command_exists aws_completer && complete -C "$(which aws_completer)" aws
-command_exists terraform && complete -o nospace -C $(which terraform) terraform
+command_exists aws && command_exists aws_completer && complete -C aws_completer aws
+command_exists terraform && complete -o nospace -C terraform terraform
 
 # Describe otherwise-undescribed options taking one argument; %d is its description.
 zstyle ':completion:*' auto-description 'specify: %d'
@@ -19,7 +19,6 @@ zstyle ':completion:*' group-name ''
 
 # Generate LS_COLORS variable if it exists, and use it for completion colors,
 # splitting its colon-separated specifications.
-
 if command_exists dircolors; then
     eval "$(dircolors -b)"
     zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
