@@ -40,6 +40,7 @@ aws = { version = "latest", symlink_bins = "true" }
 delta = "latest"
 direnv = "latest"
 fzf = "latest"
+jq = "latest"
 lua = "5.1"
 neovim = "latest"
 node = "latest"
