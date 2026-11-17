@@ -67,6 +67,12 @@
       "autosave": true,
       "encrypt": false,
       "variants": []
+    },
+    {
+      "path": "home/Library/Application Support/Google/Chrome/External Extensions",
+      "autosave": true,
+      "encrypt": false,
+      "variants": []
     }
   ],
   "exclude": [],
@@ -101,6 +107,10 @@
     "home/.config/wezterm/work.lua": 436,
     "home/.gdbinit": 384,
     "home/.gitconfig": 436,
-    "home/.tmux.conf": 436
+    "home/.tmux.conf": 436,
+    "home/Library": 448,
+    "home/Library/Application Support": 448,
+    "home/Library/Application Support/Google": 448,
+    "home/Library/Application Support/Google/Chrome": 448
   }
 }
